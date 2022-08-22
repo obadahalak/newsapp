@@ -1,0 +1,18 @@
+.table> :not(:last-child)> :last-child>* {
+    text-align: center;
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    text-align: center;
+}
+
+td {
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+
+.bio {
+    max-height: 75px;
+    overflow-y: auto;
+}

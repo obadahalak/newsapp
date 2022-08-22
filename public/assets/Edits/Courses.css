@@ -1,0 +1,20 @@
+.table> :not(:last-child)> :last-child>* {
+    text-align: center;
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    text-align: center;
+}
+
+.FixDetails {
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+.Details {
+    max-height: 75px;
+    overflow-y: auto;
+}
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {        
+    vertical-align: middle;
+}
