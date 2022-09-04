@@ -12,18 +12,15 @@ use App\Models\UserCertificate;
 trait SendCertificate
 {
 
-    public $token , $userName, $time, $fullNameImage, $fontFile, $fontSize, $angle, $posCourseX, $posCourse, $postTimeX, $postTimeY , $postCoachNameX ,$postCoachNameY;
+    public  $userName, $time, $fontFile, $fontSize, $angle, $posCourseX, $posCourse, $postTimeX, $postTimeY , $postCoachNameX ,$postCoachNameY;
 
     public function __construct()
     {
 
-        $this->token = auth('sanctum')->user()->id;
+
 
         $this->time = Carbon::now()->format('Y-m-d');
 
-        $this->userName = auth('sanctum')->user()->user_name;
-
-        $this->fullNameImage = $this->userName . time() . '.jpg';
 
         $this->fontFile = "C:\Windows\Fonts\arial.ttf";
 
@@ -66,7 +63,7 @@ trait SendCertificate
     {
 
             $isExsist=UserCertificate::where('course_id', $courseId)
-                ->where('user_id', $this->token)
+                ->where('user_id', auth('sanctum')->user()->id)
                 ->first();
             if($isExsist){
                 return false;
@@ -91,14 +88,14 @@ trait SendCertificate
 
             $posStudantY = 526;
 
-            if (preg_match("/\p{Arabic}/u", $this->userName)) {
+            if (preg_match("/\p{Arabic}/u", auth('sanctum')->user()->user_name)) {
                 $posStudantX = 760;
                 $posStudantY = 526;
             }
 
             $Arabic = new  I18N_Arabic('Glyphs');
 
-            $studantName = $Arabic->utf8Glyphs($this->userName);
+            $studantName = $Arabic->utf8Glyphs(auth('sanctum')->user()->user_name);
 
             $CourseName = $Arabic->utf8Glyphs($courseName);
 
@@ -114,13 +111,14 @@ trait SendCertificate
 
             $this->addTextCoachName($img,  $fontColor , $coachName);
 
-            imagejpeg($img, 'storage/CertificateImages/' . $this->fullNameImage);
+            $fullNameImage = auth('sanctum')->user()->user_name . time() . '.jpg';
+            imagejpeg($img, 'storage/CertificateImages/' . $fullNameImage);
 
             imagedestroy($img);
 
-            $this->saveCertificateUser($courseId , $this->fullNameImage);
+            $this->saveCertificateUser($courseId , $fullNameImage);
 
-            $this->sendCertificateToEmailUser($courseId, $this->fullNameImage);
+            $this->sendCertificateToEmailUser($courseId, $fullNameImage);
 
         }
         else {

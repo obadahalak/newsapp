@@ -34,7 +34,7 @@
                                         tareq alloji
                                     </td>
                                     <td>
-                                        <a href="{{ url('/ArticleDetails ') }}" class="btn btn-lg btn-info-light"
+                                        <a href="{{ route('ArticleDetails') }}" class="btn btn-lg btn-info-light"
                                             data-bs-placement="top" data-bs-toggle="tooltip" title="عرض تفاصيل المقال"><span
                                                 class="fe fe-eye fs-18"></span></a>                                             
                                         <a href="javascript:void(0)" class="btn btn-lg btn-danger-light"

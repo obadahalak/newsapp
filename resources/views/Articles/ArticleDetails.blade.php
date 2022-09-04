@@ -3,7 +3,7 @@
 @section('content')
     <div class="row mt-3">
         <div class="col-xl-9 m-auto">
-            <div class="card">
+            <form method="" action="" class="card">
                 <div class="card-header">
                     <h3 class="card-title m-auto">
                         عنوان المقال
@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="email-media">
                         <div class="mt-0 d-sm-flex">
-                            <img class="me-2 rounded-circle avatar avatar-lg" src="assets/images/logo.svg">
+                            <img class="me-2 rounded-circle avatar avatar-lg" src="/assets/images/logo.svg">
                             <div class="media-body pt-0">
                                 <div class="float-end d-none d-md-flex fs-15">
                                     <small class="me-3 mt-3 text-muted">Sep 13 , 2021 12:45 pm</small>
@@ -25,7 +25,7 @@
                     <div class="row img-gallery" id="lightgallery">
                         <div class="col-xl-4 col-sm-6 m-auto">
                             <a href="javascript:void(0)" class="d-block link-overlay">
-                                <img class="d-block img-fluid br-5" src="assets/images/logo.jpg">                                
+                                <img class="d-block img-fluid br-5" src="/assets/images/logo.jpg">                                
                             </a>
                         </div>
                     </div>
@@ -46,9 +46,9 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                <button class="btn btn-danger">حذف المقال</button>
+                <button class="btn btn-danger" type="submit">حذف المقال</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 @endsection

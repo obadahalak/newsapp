@@ -6,6 +6,7 @@
             text-align: center;
         }
     </style>
+
     <div class="row mt-5">
         <!-- COL END -->
         <div class="col-sm-6 col-lg-6 col-md-12 col-xl-3">

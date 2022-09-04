@@ -29,6 +29,7 @@ class ResearchRequest extends FormRequest
             'body' => 'required',
             'body_ar' => 'required',
             'link'=> 'required',
+            // 'src'=>'required|image'
         ];
     }
 }

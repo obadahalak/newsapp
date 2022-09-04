@@ -39,6 +39,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+   public const DEFUALTIMAGE='profileImage/defaultImage.png';
 
     /**
      * The attributes that should be cast.
@@ -49,17 +50,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+
     public function markUser(){
         return $this->hasMany(MarkUser::class);
     }
 
 
     public function getMarkUser($courseId){
-        return $this->hasMany(MarkUser::class)->where('course_id',$courseId)->first()->mark;
+        return $this->hasMany(MarkUser::class)->where('course_id',$courseId)->take(1)->latest()->first()->mark;
     }
 
-    public function postCompetition($competition_id){
-        return $this->hasMany(PostCompatition::class)->where('competition_id',$competition_id);
+    public function postCompetition(){
+        return $this->hasMany(PostCompatition::class);
     }
     public function compatitionUser()
     {
@@ -74,6 +77,9 @@ class User extends Authenticatable
     public function join_Room()
     {
         return $this->hasMany(JoinRoom::class);
+    }
+    public function dateOfJoinRoom($roomId){
+        return $this->hasMany(JoinRoom::class)->where('room_id', $roomId)->first()->created_at;
     }
     public function leaveRoom($roomId)
     {

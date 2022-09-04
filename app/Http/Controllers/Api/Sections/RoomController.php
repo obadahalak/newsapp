@@ -21,13 +21,18 @@ class RoomController extends Controller
     public function getRooms($lan)
     {
         if ($lan == 'ar')
-            return RoomsResource::collection(Room::select('id', 'name_ar', 'image')->get());
+            return RoomsResource::collection(Room::select('id', 'name_ar', 'image','color')->get());
         else
-            return RoomsResource::collection(Room::select('id', 'name', 'image')->get());
+            return RoomsResource::collection(Room::select('id', 'name', 'image','color')->get());
+    }
+    public function dateOfJoin($roomId)
+    {
+        return auth('sanctum')->user()->dateOfJoinRoom($roomId);
     }
     public function getRoomMessages($roomId)
     {
-        return MessagesResource::collection(MessageRoom::where('room_id', $roomId)->get());
+
+        return MessagesResource::collection(MessageRoom::where('room_id', $roomId)->where('created_at', '>=', $this->dateOfJoin($roomId))->get());
     }
 
     public function createMessage($roomId, Request $request)
@@ -46,9 +51,9 @@ class RoomController extends Controller
     public function cheackIfJoindUser($roomId)
     {
 
-        $room = Room::findOrFail($roomId);
-
+        $room = Room::find($roomId);
         $isJoin = $room->joindBy(auth('sanctum')->user());
+
         if (!$isJoin)
             return true;
         else
@@ -71,32 +76,36 @@ class RoomController extends Controller
     public function joinRoom($roomId)
     {
 
-        if ($this->cheackIfJoindUser($roomId) && $this->roomIsAbailable($roomId)) {
-
-            auth()->user()->join_Room()->create([
-                'room_id' => $roomId,
-            ]);
-
-            return response()->json('JoinRoom true');
-        }
-        return response()->json('The Room Is Full Or You Already joined');
-    }
-
-    public function leaveRoom(Room $roomId)
-    {
         if (!$this->cheackIfJoindUser($roomId)) {
+            return  ;
+        }
+        if (!$this->roomIsAbailable($roomId)) {
+            return response()->json('The Room Is Full Or You Already joined');
+         }
+        else {
+        auth()->user()->join_Room()->create([
+            'room_id' => $roomId,
+        ]);
+
+        return response()->json('JoinRoom true');
+    }
+    }
+
+    public function leaveRoom($roomId)
+    {
+
+        if (!$this->cheackIfJoindUser($roomId)) {
+
             auth('sanctum')->user()->leaveRoom($roomId)->delete();
+            return response()->json(['message' => 'Leave room is Successfully']);
         }
     }
 
-    public function ClearRoomChat($roomId){
-       // $EmptyRooms=Room::whereDoesntHave('join_User')->pluck('id');
+    public function ClearRoomChat($roomId)
+    {
+        // $EmptyRooms=Room::whereDoesntHave('join_User')->pluck('id');
         //MessageRoom::whereIn('room_id',$EmptyRooms)->delete();
 
 
     }
-
-
-
-
 }

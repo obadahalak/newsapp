@@ -11,10 +11,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\ProfileResource;
+use Illuminate\Support\Facades\File;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+    public function uploadImage($imageName, $UserImage)
+    {
+        if ($UserImage) {
+            if (File::exists('storage/' . $UserImage)) {
+
+                unlink('storage/' . $UserImage);
+                $nameImage = $imageName->store('profileImage', 'public');
+                return $nameImage;
+            } else {
+                $nameImage = $imageName->store('profileImage', 'public');
+                return $nameImage;
+            }
+        } else
+            return auth('sanctum')->user()->image;
+    }
 
     public function AuthLogin(LoginRequest $request)
     {
@@ -30,10 +46,11 @@ class AuthController extends Controller
     public function AuthSigin(SiginRequest $request)
     {
 
+
         $user = User::create(
             $request->validated() +
                 [
-                    'user_name' => $request->fname . '_' . $request->lname
+                    'user_name' => $request->fname . '_' . $request->lname,
                 ]
 
         );
@@ -42,39 +59,30 @@ class AuthController extends Controller
     }
 
 
+
     public function AuthProfile(Request $request)
     {
 
 
         $validated = $request->validate([
-            'email' => 'email|unique:users,email,' . $request->id,
-            'user_name' => 'min:4',
+            'email' => 'email|unique:users,email,' . auth('sanctum')->user()->id,
+            'user_name' => '',
             'bio' => '',
             'country' => '',
             'fname' => '',
             'lname' => '',
             'phone' => '',
-            'image' => 'image',
         ]);
-        if (request('image')) {
-            if (auth('sanctum')->user()->image) {
 
-                unlink('storage/' . auth('sanctum')->user()->image);
+        $UserImage = auth('sanctum')->user()->image;
+        return $request->user()->update(
+            $validated +
+                [
+                    'image' => $request->image ?  $this->uploadImage($request->image, $UserImage) : $UserImage,
+                ]
 
-                auth('sanctum')->user()->update([
-                    'image' => null
-                ]);
-            }
-
-            $imageName = 'profileImage/' . $request['image']->hashName();
-            $path = $request->image->store('/profileImage', 'public');
-            $imaegArray = ['image' => $imageName];
-        }
-        $request->user()->update(array_merge(
-            $validated,
-            $imaegArray ?? []
-        ));
-        return 'updated data';
+        );
+        return response()->json(['message' => 'Successfully uploaded']);
     }
 
     public function getProfile()

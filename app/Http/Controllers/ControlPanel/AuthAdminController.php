@@ -29,7 +29,7 @@ class AuthAdminController extends Controller
     public function AuthAdmin(LoginAdminRequest $request)
     {
         if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
-            return to_route('DasahBoard');
+            return to_route('DashBoard');
         }
         return $this->loginFailed();
     }

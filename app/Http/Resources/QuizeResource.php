@@ -14,11 +14,24 @@ class QuizeResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            
-            'id'=>$this->id,
-            'course_id'=>$this->course_id,
-            'correct_answer_ar'=>$this->correct_answer_ar,
-        ];
+        if($this->question_ar!=null){
+
+            return [
+
+                'id'=>$this->id,
+                'course_id'=>$this->course_id,
+                'question'=>$this->question_ar,
+                'correct_answer'=>$this->correct_answer,
+            ];
+        }else{
+
+            return [
+
+                'id'=>$this->id,
+                'course_id'=>$this->course_id,
+                'question'=>$this->question,
+                'correct_answer'=>$this->correct_answer,
+            ];
+        }
     }
 }

@@ -332,6 +332,7 @@ namespace App\Models{
  * @property string $name_ar
  * @property string $details
  * @property string $details_ar
+ * @property string $coachName
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property int $successRate
@@ -340,6 +341,8 @@ namespace App\Models{
  * @property-read \App\Models\Category $category
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Comment[] $comments
  * @property-read int|null $comments_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Like[] $disLikes
+ * @property-read int|null $dis_likes_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\photo[] $images
  * @property-read int|null $images_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Like[] $likes
@@ -348,6 +351,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Course newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereCoachName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereDetails($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereDetailsAr($value)
@@ -921,6 +925,8 @@ namespace App\Models{
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\UserCertificate[] $userCertificate
+ * @property-read int|null $user_certificate_count
  * @method static \Database\Factories\UserFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
@@ -940,6 +946,30 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUserName($value)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\UserCertificate
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $certificate
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $course_id
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate query()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereCertificate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereCourseId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereUserId($value)
+ */
+	class UserCertificate extends \Eloquent {}
 }
 
 namespace App\Models{

@@ -19,12 +19,14 @@ class RoomsResource extends JsonResource
                 'id' => $this->id,
                 'name' => $this->name_ar,
                 'image' => $this->image,
+                'color'=>$this->color,
             ];
         }else{
             return [
                 'id' => $this->id,
                 'name' => $this->name,
                 'image' => $this->image,
+                'color'=>$this->color,
             ];
         }
     }

@@ -21,7 +21,7 @@ class Room extends Model
         return $this->hasMany(JoinRoom::class,'room_id');
     }
 
-    public function joindBy( $userId){
+    public function joindBy($userId){
         return $this->join_User->contains('user_id',$userId->id);
     }
 

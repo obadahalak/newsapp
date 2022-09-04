@@ -17,6 +17,12 @@ $trans = new GoogleTranslate();
     return $result;
 }
 
+public function translateSpcific( $fromTtext, $toText, $text){
+
+    $trans = new GoogleTranslate();
+        $result=$trans->translate($fromTtext , $toText, $text);
+        return $result;
+    }
 }
 
 

@@ -20,8 +20,8 @@ class IfmisMemberResource extends JsonResource
                 'name'=>$this->name,
                 'country'=>$this->country,
                 'jop'=>$this->job,
-                'imageProfile'=>$this->imageProfile,
-                'imageFlag'=>$this->imageFlag,
+                'imageProfile'=>$this->getimageProfile(),
+                'imageFlag'=>$this->getimageFlag(),
             ];
         }else{
             return [
@@ -29,8 +29,8 @@ class IfmisMemberResource extends JsonResource
                 'name'=>$this->name_ar,
                 'country'=>$this->country_ar,
                 'jop'=>$this->job_ar,
-                'imageProfile'=>$this->imageProfile,
-                'imageFlag'=>$this->imageFlag,
+                'imageProfile'=>$this->getimageProfile(),
+                'imageFlag'=>$this->getimageFlag(),
             ];
         }
     }

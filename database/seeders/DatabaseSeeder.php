@@ -8,9 +8,11 @@ use App\Models\IfmisMember;
 use App\Models\JoinRoom;
 use App\Models\newsAds;
 use App\Models\PostCompatition;
+use App\Models\UserCountry;
 use Database\Factories\AdminFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +23,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Admin::factory(1)->create();
+        $jsonFile=File::get(public_path("data.json"));
+        $data=json_decode($jsonFile);
+        foreach($data as $listJson){
+            UserCountry::create([
+                'user_id'=>$listJson->user_id,
+                'country'=>$listJson->country,
+            ]);
+        }
+     //   Admin::factory(1)->create();
         // newsAds::factory(20)->create();
         //PostCompatition::factory(1)->create();
     // JoinRoom::factory(10)->create();

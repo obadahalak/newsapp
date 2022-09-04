@@ -7,10 +7,12 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.7",
         "statickidz/php-google-translate-free": "^1.2",
+        "stevebauman/location": "^6.5",
         "yoeunes/toastr": "^2.0"
     },
     "require-dev": {

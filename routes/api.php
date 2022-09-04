@@ -24,8 +24,10 @@ use App\Http\Controllers\NewsAdsController;
 use App\Http\Controllers\VisitorController;
 use Illuminate\Support\Facades\Storage;
 
+
+
 Route::get('/ToeknNotFound', function () {
-    return response()->error('cheack from Token');
+    return response()->error('cheack from Token',403);
 })->name('ToeknNotFound');
 
 
@@ -97,6 +99,7 @@ Route::controller(StoresController::class)->group(function () {
 ///Baner Images
 Route::controller(BannerController::class)->group(function () {
     Route::get('ListImage', 'ListImage');
+    Route::post('uploadImage','uploadImage');
 });
 ///Compititon And Join CompititonUser
 Route::controller(CompetitionController::class)->group(function () {
@@ -142,6 +145,7 @@ Route::controller(RoomController::class)->group(function(){
     Route::get('getRoomMessages/{roomId}','getRoomMessages');
     Route::post('createMessage/{roomId}','createMessage')->middleware('auth:sanctum');
     Route::get('ClearRoomChat/{roomId}','ClearRoomChat');
+    Route::get('dateOfJoin/{roomId}','dateOfJoin');
 });
 
 Route::controller(IfmisMemberController::class)->group(function(){
@@ -155,6 +159,7 @@ Route::controller(CommonSectionController::class)->group(function(){
 
 Route::controller(SiteInfoController::class)->group(function(){
     Route::get('getSiteInfo/{lan}','getSiteInfo');
+    Route::get('contactUs','contactUs');
 });
 
 Route::controller(SuggestionController::class)->group(function(){

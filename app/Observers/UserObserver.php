@@ -2,7 +2,11 @@
 
 namespace App\Observers;
 
+// use Location;
 use App\Models\User;
+use App\Models\UserCountry;
+use App\Models\CountOfVisits;
+use Stevebauman\Location\Facades\Location;
 
 class UserObserver
 {
@@ -14,8 +18,32 @@ class UserObserver
      */
     public function created(User $user)
     {
-        $user->image='/profileImage/defaultImage.png';
+        $user->image = 'profileImage/defaultImage.png';
+
         $user->save();
+
+        $UserIp = request()->ip();
+
+        $location = Location::get($UserIp);
+
+        UserCountry::create([
+
+            'user_id' => $user->id,
+
+            'country' => $location->countryName,
+
+        ]);
+        $isExsistCountry = CountOfVisits::where('country', $location->countryName)->first();
+        if ($isExsistCountry) {
+            $isExsistCountry->update([
+                'countVisits' => $isExsistCountry->countVisits + 1
+            ]);
+        } else {
+            CountOfVisits::create([
+                'country' => $location->countryName,
+                'countVisits' => 1,
+            ]);
+        }
     }
 
     /**

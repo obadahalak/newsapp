@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SiteInfo;
 use Illuminate\Http\Request;
 use App\Http\Resources\SiteInfoResource;
+use App\Models\ContactUs;
 
 class SiteInfoController extends Controller
 {
@@ -30,6 +31,13 @@ class SiteInfoController extends Controller
 
                 return SiteInfoResource::collection(SiteInfo::select('name', 'value')->get());
             }
+        }
+    }
+    public function contactUs(){
+        $data=ContactUs::select('value')->first();
+        if($data){
+
+            return json_decode($data->value);
         }
     }
 }

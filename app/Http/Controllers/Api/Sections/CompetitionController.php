@@ -60,18 +60,22 @@ class CompetitionController extends Controller
             'video' => 'required',
         ]);
 
-        if ($this->isJoinUserToCompetiton($request->competition_id)) {
+      //  if ($this->isJoinUserToCompetiton($request->competition_id)) {
 
-            return  auth('sanctum')->user()->postCompetition()->create([
+            $join=  auth('sanctum')->user()->postCompetition()->create([
 
                 'competition_id' => $request->competition_id,
                 'body' => $request->body,
                 'video' => $request->video,
 
             ]);
-        }
-            else{
-                return response()->json('User Not Joined',422);
+            if($join){
+                return response()->json(['Message' => true]);
+
             }
+       // }
+            // else{
+            //     return response()->json('User Not Joined',422);
+            // }
         }
     }

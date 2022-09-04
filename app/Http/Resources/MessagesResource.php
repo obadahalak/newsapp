@@ -18,6 +18,7 @@ class MessagesResource extends JsonResource
             'id'=>$this->id,
             'user'=>new UserResouce($this->user),
             'message'=>$this->message,
+         g
         ];
     }
 }

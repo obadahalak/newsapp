@@ -8,19 +8,20 @@ use App\Models\Course;
 use App\Models\Lession;
 use App\Models\MarkUser;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\services\LikeService;
 use App\Http\Traits\ResponseTrait;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentRequest;
-use App\Http\services\CommentService;
 
+use App\Http\Resources\QuizeResource;
+use App\Http\services\CommentService;
 use App\Http\Resources\CourseResource;
 use App\Http\services\SendCertificate;
 use App\Http\Resources\LessionResource;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ResultQuzieRequest;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class CourseController extends Controller
 {
@@ -32,9 +33,9 @@ class CourseController extends Controller
 
         if ($lan == 'ar') {
 
-            return  CourseResource::collection(Course::select('id', 'name_ar', 'details_ar')->lazy());
+            return  CourseResource::collection(Course::select('id', 'name_ar', 'details_ar','successRate')->lazy());
         } else {
-            return  CourseResource::collection(Course::select('id', 'name', 'details')->lazy());
+            return  CourseResource::collection(Course::select('id', 'name', 'details','successRate')->lazy());
         }
     }
 
@@ -64,22 +65,16 @@ class CourseController extends Controller
     public function ListQuzie($lan, $course_id)
     {
         if ($lan == 'ar')
-            return Quiz::where('course_id', $course_id)->get(['id', 'question_ar',  'correct_answer']);
+            return QuizeResource::collection(Quiz::select('id', 'course_id','question_ar',  'correct_answer')->where('course_id', $course_id)->get());
 
         else
-            return Quiz::where('course_id', $course_id)->get(['id', 'question', 'correct_answer']);
+        return QuizeResource::collection(Quiz::select('id', 'course_id','question',  'correct_answer')->where('course_id', $course_id)->get());
     }
 
     public function  ResultQuzie(ResultQuzieRequest $request)
     {
-        $user = auth('sanctum')->id();
-        $course_id = $request->course_id;
-        $data = MarkUser::where('user_id', $user)->where('course_id', $course_id)->first();
 
-        if ($data) {
 
-            return response()->error('User Mark\'s  has Been found ');
-        } else {
 
             MarkUser::create(
                 $request->validated()
@@ -89,7 +84,6 @@ class CourseController extends Controller
 
             return response()->success('', 'data Insered');
         }
-    }
 
 
     public function sendCertificate($course_id)

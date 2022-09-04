@@ -10,18 +10,29 @@ use App\Http\Resources\ResearchResource;
 
 class ResearchController extends Controller
 {
-    public function getResearch($lan, $catId){
-        if($lan=='ar')
-            return ResearchResource::collection(Research::Accepted()->where('category_id',$catId)->select('id','title_ar','body_ar','link')->lazy());
+    public function getResearch($lan, $catId)
+    {
+        if ($lan == 'ar')
+            return ResearchResource::collection(Research::Accepted()->where('category_id', $catId)->select('id', 'title_ar', 'body_ar', 'link')->lazy());
         else
-        return ResearchResource::collection(Research::Accepted()->where('category_id',$catId)->select('id','title','body','link')->lazy());
+            return ResearchResource::collection(Research::Accepted()->where('category_id', $catId)->select('id', 'title', 'body', 'link')->lazy());
     }
 
-    public function createResearch(ResearchRequest $request){
-            Research::create($request->validated()+[
-                'category_id'=>11,
-                'user_id'=>auth('sanctum')->user()->id,
+    public function createResearch(ResearchRequest $request)
+    {
+
+        $research = Research::create($request->validated() + [
+            'category_id' => 11,
+            'user_id' => auth('sanctum')->user()->id,
+        ]);
+
+        foreach($request->src as $images){
+            $research->images()->create([
+                'src' => '/' . $images->store('research', 'public'),
+                'type' => 'image',
             ]);
-    }
+        }
+        
 
+    }
 }

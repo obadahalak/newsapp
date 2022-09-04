@@ -25,6 +25,7 @@ class Research extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+
     public function visitors()
     {
         return $this->hasOne(Visitor::class);
@@ -48,6 +49,7 @@ class Research extends Model
     {   //2 => is Admin  , 1 => is User
         return $q->where('status', 1)->orWhere('status', 2);
     }
+
     public function images()
     {
         return $this->morphMany(photo::class, 'photoable');

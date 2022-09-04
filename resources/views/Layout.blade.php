@@ -8,24 +8,24 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.svg" />
 
     <!-- TITLE -->
 
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="style" href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- STYLE CSS -->
-    <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/dark-style.css" rel="stylesheet" />
-    <link href="../assets/css/transparent-style.css" rel="stylesheet">
-    <link href="../assets/css/skin-modes.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/dark-style.css" rel="stylesheet" />
+    <link href="/assets/css/transparent-style.css" rel="stylesheet">
+    <link href="/assets/css/skin-modes.css" rel="stylesheet" />
 
     <!--- FONT-ICONS CSS -->
-    <link href="../assets/css/icons.css" rel="stylesheet" />
+    <link href="/assets/css/icons.css" rel="stylesheet" />
 
     <!-- COLOR SKIN CSS -->
-    <link id="theme" rel="stylesheet" type="text/css" media="all" href="../assets/colors/color1.css" />
+    <link id="theme" rel="stylesheet" type="text/css" media="all" href="/assets/colors/color1.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400&display=swap');
 
@@ -42,7 +42,7 @@ $mode = session()->get('theme');
 
     <!-- GLOBAL-LOADER -->
     <div id="global-loader">
-        <img src="../assets/images/loader.svg" class="loader-img" alt="Loader">
+        <img src="/assets/images/loader.svg" class="loader-img" alt="Loader">
     </div>
     <!-- /GLOBAL-LOADER -->
 
@@ -59,9 +59,9 @@ $mode = session()->get('theme');
                             href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
                         <a class="logo-horizontal ">
-                            <img src="../assets/images/logo.svg" style="width:60px"
+                            <img src="/assets/images/logo.svg" style="width:60px"
                                 class="header-brand-img desktop-logo" alt="logo">
-                            <img src="../assets/images/logo.svg" style="width:60px" class="header-brand-img light-logo1"
+                            <img src="/assets/images/logo.svg" style="width:60px" class="header-brand-img light-logo1"
                                 alt="logo">
                         </a>
                         <!-- LOGO -->
@@ -111,15 +111,13 @@ $mode = session()->get('theme');
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                                 class="nav-link leading-none d-flex">
-                                                <img src="/storage/{{auth('admin')->user()->image}}" alt="profile-user"
+                                                <img src="/assets/images/logo.svg" alt="profile-user"
                                                     class="avatar  profile-user brround cover-image">
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading">
                                                     <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">
-                                                            {{auth('admin')->user()->name}}
-                                                        </h5>
+                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">اسم المستخدم</h5>
                                                         <small class="text-muted">مدير الحساب</small>
                                                     </div>
                                                 </div>
@@ -127,7 +125,7 @@ $mode = session()->get('theme');
                                                 <a class="dropdown-item" href="{{ route('Settings') }}">
                                                     <i class="dropdown-icon fe fe-settings"></i> إعدادت الحساب
                                                 </a>
-                                                <a class="dropdown-item" href="{{ route('LogoutAdmin') }}">
+                                                <a class="dropdown-item" href="{{ route('Login') }}">
                                                     <i class="dropdown-icon fe fe-log-out"></i> تسجيل الخروج
                                                 </a>
                                             </div>
@@ -146,12 +144,12 @@ $mode = session()->get('theme');
                 <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
                 <div class="app-sidebar">
                     <div class="side-header">
-                        <a class="header-brand1" href="{{ url('DasahBoard') }}">
-                            <img src="../assets/images/logo.svg" class="header-brand-img desktop-logo"
+                        <a class="header-brand1" href="{{ route('DashBoard') }}">
+                            <img src="/assets/images/logo.svg" class="header-brand-img desktop-logo"
                                 style="width: 60px;">
-                            <img src="../assets/images/logo.svg" class="header-brand-img toggle-logo">
-                            <img src="../assets/images/logo.svg" class="header-brand-img light-logo">
-                            <img src="../assets/images/logo.svg" class="header-brand-img light-logo1"
+                            <img src="/assets/images/logo.svg" class="header-brand-img toggle-logo">
+                            <img src="/assets/images/logo.svg" class="header-brand-img light-logo">
+                            <img src="/assets/images/logo.svg" class="header-brand-img light-logo1"
                                 style="width: 60px;">
                         </a>
                         <!-- LOGO -->
@@ -163,7 +161,7 @@ $mode = session()->get('theme');
                             </svg></div>
                         <ul class="side-menu">
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('DasahBoard') }}"><i
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('DashBoard') }}"><i
                                         class="side-menu__icon icon icon-speedometer"></i><span
                                         class="side-menu__label">لوحة التحكم</span></a>
                             </li>
@@ -184,9 +182,9 @@ $mode = session()->get('theme');
                                         class="side-menu__label">المسابقات</span></a>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('News') }}"><i
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('News','ar') }}"><i
                                         class="side-menu__icon icon icon-globe"></i><span
-                                        class="side-menu__label">الاخبار</span></a>
+                                        class="side-menu__label">أخبار الاتحاد الرياضي</span></a>
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('Stores') }}"><i
@@ -205,7 +203,7 @@ $mode = session()->get('theme');
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide"
-                                    href="{{ route('Researches') }}"><i class="side-menu__icon ti-zoom-in"></i><span
+                                    href="{{ route('Researches','ar') }}"><i class="side-menu__icon ti-zoom-in"></i><span
                                         class="side-menu__label">الأبحاث
                                         العلمية</span></a>
                             </li>
@@ -310,82 +308,126 @@ $mode = session()->get('theme');
     <!-- BACK-TO-TOP -->
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-    <script src="../assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
 
     <!-- BOOTSTRAP JS -->
-    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- SPARKLINE JS-->
-    <script src="../assets/js/jquery.sparkline.min.js"></script>
+    <script src="/assets/js/jquery.sparkline.min.js"></script>
 
     <!-- CHART-CIRCLE JS-->
-    <script src="../assets/js/circle-progress.min.js"></script>
+    <script src="/assets/js/circle-progress.min.js"></script>
 
     <!-- C3 CHART JS -->
-    <script src="../assets/plugins/charts-c3/d3.v5.min.js"></script>
-    <script src="../assets/plugins/charts-c3/c3-chart.js"></script>
+    <script src="/assets/plugins/charts-c3/d3.v5.min.js"></script>
+    <script src="/assets/plugins/charts-c3/c3-chart.js"></script>
 
     <!-- INPUT MASK JS-->
-    <script src="../assets/plugins/input-mask/jquery.mask.min.js"></script>
+    <script src="/assets/plugins/input-mask/jquery.mask.min.js"></script>
 
     <!-- SIDE-MENU JS -->
-    <script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+    <script src="/assets/plugins/sidemenu/sidemenu.js"></script>
 
     <!-- INTERNAL SELECT2 JS -->
-    <script src="../assets/plugins/select2/select2.full.min.js"></script>
+    <script src="/assets/plugins/select2/select2.full.min.js"></script>
 
     <!-- DATA TABLE JS-->
-    <script src="../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-    <script src="../assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
-    <script src="../assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
-    <script src="../assets/plugins/datatable/js/jszip.min.js"></script>
-    <script src="../assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
-    <script src="../assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
-    <script src="../assets/plugins/datatable/js/buttons.html5.min.js"></script>
-    <script src="../assets/plugins/datatable/js/buttons.print.min.js"></script>
-    <script src="../assets/plugins/datatable/js/buttons.colVis.min.js"></script>
-    <script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
-    <script src="../assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
-    <script src="../assets/js/table-data.js"></script>
+    <script src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="/assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+    <script src="/assets/plugins/datatable/js/jszip.min.js"></script>
+    <script src="/assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+    <script src="/assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.html5.min.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.print.min.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+    <script src="/assets/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="/assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+    <script src="/assets/js/table-data.js"></script>
 
     <!-- SIDEBAR JS -->
-    <script src="../assets/plugins/sidebar/sidebar.js"></script>
+    <script src="/assets/plugins/sidebar/sidebar.js"></script>
+
+    <script src="/assets/plugins/formwizard/jquery.smartWizard.js"></script>
+    <script src="/assets/plugins/formwizard/fromwizard.js"></script>
+
+    <!-- INTERNAl Jquery.steps js -->
+    <script src="/assets/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="/assets/plugins/parsleyjs/parsley.min.js"></script>
+
 
     <!-- Perfect SCROLLBAR JS-->
-    <script src="../assets/plugins/p-scroll/perfect-scrollbar.js"></script>
-    <script src="../assets/plugins/p-scroll/pscroll.js"></script>
-    <script src="../assets/plugins/p-scroll/pscroll-1.js"></script>
+    <script src="/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+    <script src="/assets/plugins/p-scroll/pscroll.js"></script>
+    <script src="/assets/plugins/p-scroll/pscroll-1.js"></script>
 
 
     <!-- INTERNAL Bootstrap-Datepicker js-->
-    <script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- INTERNAL Accordion-Wizard-Form js-->
+    <script src="/assets/plugins/accordion-Wizard-Form/jquery.accordion-wizard.min.js"></script>
+    <script src="/assets/js/form-wizard.js"></script>
 
     <!-- INTERNAL File-Uploads Js-->
-    <script src="../assets/plugins/fancyuploder/jquery.ui.widget.js"></script>
-    <script src="../assets/plugins/fancyuploder/jquery.fileupload.js"></script>
-    <script src="../assets/plugins/fancyuploder/jquery.iframe-transport.js"></script>
-    <script src="../assets/plugins/fancyuploder/jquery.fancy-fileupload.js"></script>
-    <script src="../assets/plugins/fancyuploder/fancy-uploader.js"></script>
-    <script src="../assets/plugins/gallery/picturefill.js"></script>
-    <script src="../assets/plugins/gallery/lightgallery.js"></script>
-    <script src="../assets/plugins/gallery/lightgallery-1.js"></script>
-    <script src="../assets/plugins/gallery/lg-pager.js"></script>
-    <script src="../assets/plugins/gallery/lg-autoplay.js"></script>
-    <script src="../assets/plugins/gallery/lg-fullscreen.js"></script>
-    <script src="../assets/plugins/gallery/lg-zoom.js"></script>
-    <script src="../assets/plugins/gallery/lg-hash.js"></script>
-    <script src="../assets/plugins/gallery/lg-share.js"></script>
+    <script src="/assets/plugins/fancyuploder/jquery.ui.widget.js"></script>
+    <script src="/assets/plugins/fancyuploder/jquery.fileupload.js"></script>
+    <script src="/assets/plugins/fancyuploder/jquery.iframe-transport.js"></script>
+    <script src="/assets/plugins/fancyuploder/jquery.fancy-fileupload.js"></script>
+    <script src="/assets/plugins/fancyuploder/fancy-uploader.js"></script>
+    <script src="/assets/plugins/gallery/picturefill.js"></script>
+    <script src="/assets/plugins/gallery/lightgallery.js"></script>
+    <script src="/assets/plugins/gallery/lightgallery-1.js"></script>
+    <script src="/assets/plugins/gallery/lg-pager.js"></script>
+    <script src="/assets/plugins/gallery/lg-autoplay.js"></script>
+    <script src="/assets/plugins/gallery/lg-fullscreen.js"></script>
+    <script src="/assets/plugins/gallery/lg-zoom.js"></script>
+    <script src="/assets/plugins/gallery/lg-hash.js"></script>
+    <script src="/assets/plugins/gallery/lg-share.js"></script>
 
     <!-- Color Theme js -->
-    <script src="../assets/js/themeColors.js"></script>
+    <script src="/assets/js/themeColors.js"></script>
 
     <!-- Sticky js -->
-    <script src="../assets/js/sticky.js"></script>
+    <script src="/assets/js/sticky.js"></script>
 
     <!-- CUSTOM JS -->
-    <script src="../assets/js/custom.js"></script>
+    <script src="/assets/js/custom.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#UserImage')
+                        .attr('src', e.target.result)
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                document.getElementById("uploadPreview").src = oFREvent.target.result;
+            };
+        };
+
+        document.getElementById('buttonid').addEventListener('click', openDialog);
+
+        function openDialog() {
+            document.getElementById('uploadImage').click();
+        }
+    </script>
+
 
     <script>
         $(document).ready(function() {

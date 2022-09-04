@@ -1,0 +1,923 @@
+[{
+        "country": "United States",
+        "user_id": 2
+    },
+    {
+        "country": "China",
+        "user_id": 2
+    },
+    {
+        "country": "Japan",
+        "user_id": 2
+    },
+    {
+        "country": "United Kingdom",
+        "user_id": 2
+    },
+    {
+        "country": "Germany",
+        "user_id": 2
+    },
+    {
+        "country": "South Korea",
+
+        "user_id": 2
+    },
+    {
+        "country": "France",
+        "user_id": 2
+    },
+    {
+        "country": "Canada",
+        "user_id": 2
+    },
+    {
+        "country": "Italy",
+        "user_id": 2
+    },
+    {
+        "country": "Brazil",
+        "user_id": 2
+    },
+    {
+        "country": "Australia",
+        "user_id": "1.1000"
+    },
+    {
+        "country": "Netherlands",
+        "user_id": "1.1000"
+    },
+    {
+        "country": "Russia",
+        "user_id": 1
+    },
+    {
+        "country": "Taiwan",
+        "user_id": 2
+    },
+    {
+        "country": "India",
+        "user_id": 2
+    },
+    {
+        "country": "Sweden",
+        "user_id": 2
+    },
+    {
+        "country": "Spain",
+        "user_id": 2
+    },
+    {
+        "country": "Mexico",
+        "user_id": 2
+    },
+    {
+        "country": "Switzerland",
+        "user_id": 2
+    },
+    {
+        "country": "South Africa",
+        "user_id": 2
+    },
+    {
+        "country": "Poland",
+        "user_id": 2
+    },
+    {
+        "country": "Indonesia",
+        "user_id": 2
+    },
+    {
+        "country": "Vietnam",
+        "user_id": 2
+    },
+    {
+        "country": "Turkey",
+        "user_id": 2
+    },
+    {
+        "country": "Norway",
+        "user_id": 2
+    },
+    {
+        "country": "Argentina",
+        "user_id": 2
+    },
+    {
+        "country": "Finland",
+        "user_id": 2
+    },
+    {
+        "country": "Romania",
+        "user_id": 2
+    },
+    {
+        "country": "Denmark",
+        "user_id": 2
+    },
+    {
+        "country": "Hong Kong",
+        "user_id": 2
+    },
+    {
+        "country": "Austria",
+        "user_id": 2
+    },
+    {
+        "country": "Ukraine",
+        "user_id": 2
+    },
+    {
+        "country": "Belgium",
+        "user_id": 2
+    },
+    {
+        "country": "Colombia",
+        "user_id": 2
+    },
+    {
+        "country": "Thailand",
+        "user_id": 2
+    },
+    {
+        "country": "Egypt",
+        "user_id": 2
+    },
+    {
+        "country": "Czech Republic",
+        "user_id": 2
+    },
+    {
+        "country": "Israel",
+        "user_id": 2
+    },
+    {
+        "country": "Chile",
+        "user_id": 2
+    },
+    {
+        "country": "New Zealand",
+        "user_id": 2
+    },
+    {
+        "country": "Malaysia",
+        "user_id": 2
+    },
+    {
+        "country": "Ireland",
+        "user_id": 2
+    },
+    {
+        "country": "Portugal",
+        "user_id": 2
+    },
+    {
+        "country": "Singapore",
+        "user_id": 2
+    },
+    {
+        "country": "Greece",
+        "user_id": 2
+    },
+    {
+        "country": "Saudi Arabia",
+        "user_id": 2
+    },
+    {
+        "country": "Hungary",
+        "user_id": 2
+    },
+    {
+        "country": "Philippines",
+        "user_id": 2
+    },
+    {
+        "country": "Iran",
+        "user_id": 2
+    },
+    {
+        "country": "Pakistan",
+        "user_id": 2
+    },
+    {
+        "country": "Venezuela",
+        "user_id": 2
+    },
+    {
+        "country": "Bulgaria",
+        "user_id": 2
+    },
+    {
+        "country": "Morocco",
+        "user_id": 2
+    },
+    {
+        "country": "United Arab Emirates",
+        "user_id": 2
+    },
+    {
+        "country": "Tunisia",
+        "user_id": 2
+    },
+    {
+        "country": "Algeria",
+        "user_id": 2
+    },
+    {
+        "country": "Slovakia",
+        "user_id": 2
+    },
+    {
+        "country": "Slovenia",
+        "user_id": 2
+    },
+    {
+        "country": "Kazakhstan",
+        "user_id": 2
+    },
+    {
+        "country": "Peru",
+        "user_id": 2
+    },
+    {
+        "country": "Lithuania",
+        "user_id": 2
+    },
+    {
+        "country": "Croatia",
+        "user_id": 1
+    },
+    {
+        "country": "Serbia",
+        "user_id": 1
+    },
+    {
+        "country": "Costa Rica",
+        "user_id": 1
+    },
+    {
+        "country": "Kuwait",
+        "user_id": 1
+    },
+    {
+        "country": "Ecuador",
+        "user_id": 1
+    },
+    {
+        "country": "Belarus",
+        "user_id": 1
+    },
+    {
+        "country": "Latvia",
+        "user_id": 1
+    },
+    {
+        "country": "Kenya",
+        "user_id": 1
+    },
+    {
+        "country": "Panama",
+        "user_id": 1
+    },
+    {
+        "country": "Luxembourg",
+        "user_id": 1
+    },
+    {
+        "country": "Estonia",
+        "user_id": 1
+    },
+    {
+        "country": "Uruguay",
+        "user_id": 1
+    },
+    {
+        "country": "Cyprus",
+        "user_id": 1
+    },
+    {
+        "country": "Georgia",
+        "user_id": 1
+    },
+    {
+        "country": "Nigeria",
+        "user_id": 1
+    },
+    {
+        "country": "Puerto Rico",
+        "user_id": 1
+    },
+    {
+        "country": "Bangladesh",
+        "user_id": 1
+    },
+    {
+        "country": "Dominican Republic",
+        "user_id": 1
+    },
+    {
+        "country": "Syria",
+        "user_id": 1
+    },
+    {
+        "country": "Iceland",
+        "user_id": 1
+    },
+    {
+        "country": "Qatar",
+        "user_id": 1
+    },
+    {
+        "country": "Moldova",
+        "user_id": 1
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "user_id": 1
+    },
+    {
+        "country": "Jordan",
+        "user_id": 1
+    },
+    {
+        "country": "Oman",
+        "user_id": 1
+    },
+    {
+        "country": "El Salvador",
+        "user_id": 1
+    },
+    {
+        "country": "Bolivia",
+        "user_id": 1
+    },
+    {
+        "country": "Malta",
+        "user_id": 1
+    },
+    {
+        "country": "Guatemala",
+        "user_id": 1
+    },
+    {
+        "country": "Sri Lanka",
+        "user_id": 1
+    },
+    {
+        "country": "Armenia",
+        "user_id": 1
+    },
+    {
+        "country": "Azerbaijan",
+        "user_id": 1
+    },
+    {
+        "country": "Palestine",
+        "user_id": 1
+    },
+    {
+        "country": "Mauritius",
+        "user_id": 1
+    },
+    {
+        "country": "Nepal",
+        "user_id": 1
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "user_id": 1
+    },
+    {
+        "country": "Bahrain",
+        "user_id": 1
+    },
+    {
+        "country": "Lebanon",
+        "user_id": 1
+    },
+    {
+        "country": "Nicaragua",
+        "user_id": 1
+    },
+    {
+        "country": "Paraguay",
+        "user_id": 1
+    },
+    {
+        "country": "Mozambique",
+        "user_id": 1
+    },
+    {
+        "country": "Tanzania",
+        "user_id": 1
+    },
+    {
+        "country": "Ghana",
+        "user_id": 1
+    },
+    {
+        "country": "Macau",
+        "user_id": 1
+    },
+    {
+        "country": "Albania",
+        "user_id": 1
+    },
+    {
+        "country": "Angola",
+        "user_id": 1
+    },
+    {
+        "country": "Libya",
+        "user_id": 1
+    },
+    {
+        "country": "Senegal",
+        "user_id": 1
+    },
+    {
+        "country": "Sudan",
+        "user_id": 1
+    },
+    {
+        "country": "Iraq",
+        "user_id": 1
+    },
+    {
+        "country": "Uzbekistan",
+        "user_id": 1
+    },
+    {
+        "country": "Kyrgyzstan",
+        "user_id": 1
+    },
+    {
+        "country": "Cambodia",
+        "user_id": 1
+    },
+    {
+        "country": "Guam",
+        "user_id": 1
+    },
+    {
+        "country": "Uganda",
+        "user_id": 1
+    },
+    {
+        "country": "Jamaica",
+        "user_id": 1
+    },
+    {
+        "country": "Mongolia",
+        "user_id": 1
+    },
+    {
+        "country": "Namibia",
+        "user_id": 1
+    },
+    {
+        "country": "Rwanda",
+        "user_id": 1
+    },
+    {
+        "country": "Brunei",
+        "user_id": 1
+    },
+    {
+        "country": "Montenegro",
+        "user_id": 1
+    },
+    {
+        "country": "Gabon",
+        "user_id": 1
+    },
+    {
+        "country": "Zambia",
+        "user_id": 1
+    },
+    {
+        "country": "New Caledonia",
+        "user_id": 1
+    },
+    {
+        "country": "Honduras",
+        "user_id": 1
+    },
+    {
+        "country": "Barbados",
+        "user_id": 1
+    },
+    {
+        "country": "Cameroon",
+        "user_id": 1
+    },
+    {
+        "country": "Fiji",
+        "user_id": 1
+    },
+    {
+        "country": "Ivory Coast",
+        "user_id": 1
+    },
+    {
+        "country": "Haiti",
+        "user_id": 1
+    },
+    {
+        "country": "Bahamas",
+        "user_id": 1
+    },
+    {
+        "country": "Cuba",
+        "user_id": 1
+    },
+    {
+        "country": "Afghanistan",
+        "user_id": 1
+    },
+    {
+        "country": "Botswana",
+        "user_id": 1
+    },
+    {
+        "country": "Bermuda",
+        "user_id": 1
+    },
+    {
+        "country": "United States Virgin Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Zimbabwe",
+        "user_id": 1
+    },
+    {
+        "country": "Malawi",
+        "user_id": 1
+    },
+    {
+        "country": "Liechtenstein",
+        "user_id": 1
+    },
+    {
+        "country": "Tajikistan",
+        "user_id": 1
+    },
+    {
+        "country": "Gibraltar",
+        "user_id": 1
+    },
+    {
+        "country": "Saint Kitts and Nevis",
+        "user_id": 1
+    },
+    {
+        "country": "Madagascar",
+        "user_id": 1
+    },
+    {
+        "country": "Belize",
+        "user_id": 1
+    },
+    {
+        "country": "Monaco",
+        "user_id": 1
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "user_id": 1
+    },
+    {
+        "country": "Laos",
+        "user_id": 1
+    },
+    {
+        "country": "Maldives",
+        "user_id": 1
+    },
+    {
+        "country": "Yemen",
+        "user_id": 1
+    },
+    {
+        "country": "Papua New Guinea",
+        "user_id": 1
+    },
+    {
+        "country": "Suriname",
+        "user_id": 1
+    },
+    {
+        "country": "French Polynesia",
+        "user_id": 1
+    },
+    {
+        "country": "Lesotho",
+        "user_id": 1
+    },
+    {
+        "country": "Benin",
+        "user_id": 1
+    },
+    {
+        "country": "Faroe Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Guyana",
+        "user_id": 1
+    },
+    {
+        "country": "Aruba",
+        "user_id": 1
+    },
+    {
+        "country": "Mali",
+        "user_id": 1
+    },
+    {
+        "country": "Seychelles",
+        "user_id": 1
+    },
+    {
+        "country": "Cayman Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Eswatini",
+        "user_id": 1
+    },
+    {
+        "country": "Ethiopia",
+        "user_id": 1
+    },
+    {
+        "country": "Mauritania",
+        "user_id": 1
+    },
+    {
+        "country": "Reunion",
+        "user_id": 1
+    },
+    {
+        "country": "Andorra",
+        "user_id": 1
+    },
+    {
+        "country": "Burkina Faso",
+        "user_id": 1
+    },
+    {
+        "country": "San Marino",
+        "user_id": 1
+    },
+    {
+        "country": "Myanmar",
+        "user_id": 1
+    },
+    {
+        "country": "Bhutan",
+        "user_id": 1
+    },
+    {
+        "country": "Gambia",
+        "user_id": 1
+    },
+    {
+        "country": "DR Congo",
+        "user_id": 1
+    },
+    {
+        "country": "Niger",
+        "user_id": 1
+    },
+    {
+        "country": "Sierra Leone",
+        "user_id": 1
+    },
+    {
+        "country": "Vatican City",
+
+        "user_id": 1
+    },
+    {
+        "country": "Cape Verde",
+        "user_id": 1
+    },
+    {
+        "country": "Saint Vincent and the Grenadines",
+        "user_id": 1
+    },
+    {
+        "country": "Samoa",
+        "user_id": 1
+    },
+    {
+        "country": "Greenland",
+        "user_id": 1
+    },
+    {
+        "country": "British Virgin Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Togo",
+        "user_id": 1
+    },
+    {
+        "country": "Liberia",
+        "user_id": 1
+    },
+    {
+        "country": "Northern Mariana Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Republic of the Congo",
+        "user_id": 1
+    },
+    {
+        "country": "Djibouti",
+        "user_id": 1
+    },
+    {
+        "country": "Vanuatu",
+        "user_id": 1
+    },
+    {
+        "country": "Somalia",
+        "user_id": 1
+    },
+    {
+        "country": "Solomon Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Turkmenistan",
+        "user_id": 1
+    },
+    {
+        "country": "Sao Tome and Principe",
+        "user_id": 1
+    },
+    {
+        "country": "Grenada",
+        "user_id": 1
+    },
+    {
+        "country": "Turks and Caicos Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Cook Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Nauru",
+        "user_id": 1
+    },
+    {
+        "country": "Tuvalu",
+        "user_id": 1
+    },
+    {
+        "country": "Saint Martin",
+        "user_id": 1
+    },
+    {
+        "country": "Micronesia",
+        "user_id": 1
+    },
+    {
+        "country": "Jersey",
+        "user_id": 1
+    },
+    {
+        "country": "Tonga",
+        "user_id": 1
+    },
+    {
+        "country": "Burundi",
+        "user_id": 1
+    },
+    {
+        "country": "Guinea-Bissau",
+        "user_id": 1
+    },
+    {
+        "country": "Isle of Man",
+        "user_id": 1
+    },
+    {
+        "country": "Central African Republic",
+        "user_id": 1
+    },
+    {
+        "country": "Chad",
+        "user_id": 1
+    },
+    {
+        "country": "Guinea",
+        "user_id": 1
+    },
+    {
+        "country": "Eritrea",
+        "user_id": 1
+    },
+    {
+        "country": "Timor-Leste",
+        "user_id": 1
+    },
+    {
+        "country": "Comoros",
+        "user_id": 1
+    },
+    {
+        "country": "Guadeloupe",
+        "user_id": 1
+    },
+    {
+        "country": "American Samoa",
+        "user_id": 1
+    },
+    {
+        "country": "Palau",
+        "user_id": 1
+    },
+    {
+        "country": "Anguilla",
+        "user_id": 1
+    },
+    {
+        "country": "Saint Pierre and Miquelon",
+        "user_id": 1
+    },
+    {
+        "country": "Equatorial Guinea",
+        "user_id": 1
+    },
+    {
+        "country": "Kiribati",
+        "user_id": 1
+    },
+    {
+        "country": "Wallis and Futuna",
+        "user_id": 1
+    },
+    {
+        "country": "French Guiana",
+        "user_id": 1
+    },
+    {
+        "country": "Guernsey",
+        "user_id": 1
+    },
+    {
+        "country": "Marshall Islands",
+        "user_id": 1
+    },
+    {
+        "country": "Niue",
+        "user_id": 1
+    },
+    {
+        "country": "Tokelau",
+        "user_id": 1
+    },
+    {
+        "country": "Montserrat",
+        "user_id": 1
+    },
+    {
+        "country": "North Korea",
+        "user_id": 1
+    },
+    {
+        "country": "Dominica",
+        "user_id": 1
+    },
+    {
+        "country": "Saint Lucia",
+        "user_id": 1
+    },
+    {
+        "country": "Western Sahara",
+        "user_id": 1
+    },
+    {
+        "country": "Martinique",
+        "user_id": 1
+    },
+    {
+        "country": "Curacao",
+        "user_id": 1
+    },
+    {
+        "country": "Sint Maarten",
+        "user_id": 1
+    },
+    {
+        "country": "Falkland Islands",
+        "user_id": 1
+    }
+]

@@ -48,8 +48,8 @@ class DataController extends Controller
     public function FilesLession()
     {
 
-        $test = new   Translate();
-        Lession::find(2)->images()->create([
+
+        Lession::find(4)->images()->create([
             'src' => '/LessionFiles/3.pdf',
             'type' => 'pdf'
         ]);
@@ -109,7 +109,7 @@ class DataController extends Controller
 
     public function createCopetiton()
     {
-        $faker = Factory::create();
+        // $faker = Factory::create();
         // $test = new Translate();
         // $name = $faker->text(8);
         // $name_ar = $test->translate($name);
@@ -129,7 +129,7 @@ class DataController extends Controller
         //     Competition::create($data);
         // }
 
-        $test=Competition::find(13);
+        $test=Competition::find(14);
         $test->prize_files()->create([
             'src'=>'/CompetitionFiles/image1.png',
             'type'=>'image',

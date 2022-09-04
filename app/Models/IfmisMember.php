@@ -11,13 +11,13 @@ class IfmisMember extends Model
     protected $hidden=['created_at','updated_at'];
     protected $guarded=[];
 
-    public function getimageProfileAttribute($value){
-        return config('app.url') .'/'. $value;
+    public function getimageProfile(){
+        return 'http://aurora-team.com/newsApp/public/storage/'. $this->imageProfile;
 
     }
 
 
-    public function getimageFlagAttribute($value){
-        return config('app.url') .'/'. $value;
+    public function getimageFlag(){
+        return 'http://aurora-team.com/newsApp/public/storage/'. $this->imageFlag;
     }
 }
