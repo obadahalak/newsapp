@@ -32,6 +32,7 @@ class UserObserver
 
             'country' => $location->countryName,
 
+
         ]);
         $isExsistCountry = CountOfVisits::where('country', $location->countryName)->first();
         if ($isExsistCountry) {
@@ -41,6 +42,7 @@ class UserObserver
         } else {
             CountOfVisits::create([
                 'country' => $location->countryName,
+                'countryCode'=>$location->countryCode,
                 'countVisits' => 1,
             ]);
         }

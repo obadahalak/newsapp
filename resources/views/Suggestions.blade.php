@@ -28,7 +28,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($data as $item)
-                                    
+
                                 <tr>
                                     <td> {{$item->name}}</td>
                                     <td>{{$item->age    }}</td>
@@ -45,7 +45,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="/storage/{{$item->file}}">
+                                        <a href="{{ asset('public/storage/'.$item->file)}}">
                                             <img src="https://www.svgrepo.com/show/48933/file.svg" />
                                         </a>
                                     </td>
@@ -54,6 +54,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{$data->links()}}
                 </div>
             </div>
         </div>

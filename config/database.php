@@ -63,6 +63,26 @@ return [
             ]) : [],
         ],
 
+        'superAdmin' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => 'aurora-team.com',
+            'port' => env('DB_PORT', '3306'),
+            'database' => 'u916605711_superAdminNews',
+            'username' =>'u916605711_superAdmin',
+            'password' =>'0Sy0;Ez[',
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

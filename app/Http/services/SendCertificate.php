@@ -4,10 +4,11 @@ namespace App\Http\services;
 
 use Carbon\Carbon;
 use App\Models\Course;
+use Illuminate\Support\Str;
+use App\Models\UserCertificate;
 use App\Mail\SendCertificateUser;
 use Illuminate\Support\Facades\Mail;
 use App\Http\services\I18N\I18N_Arabic;
-use App\Models\UserCertificate;
 
 trait SendCertificate
 {
@@ -21,14 +22,13 @@ trait SendCertificate
 
         $this->time = Carbon::now()->format('Y-m-d');
 
-
-        $this->fontFile = "C:\Windows\Fonts\arial.ttf";
+        $this->fontFile = public_path("arial.ttf");
 
         $this->fontSize = 20;
 
         $this->angle = 0;
 
-        $this->posCourseX = 640;
+        $this->posCourseX = 500;
 
         $this->posCourseY = 445;
 
@@ -81,7 +81,10 @@ trait SendCertificate
             }
 
             $courseName = Course::find($courseId)->name_ar;
-
+         // $strCourseName= Str::length($courseName);
+            // if($strCourseName >6){
+            //     $this->posCourseX -= (($strCourseName - 6) * 3);
+            // }
             $coachName = Course::find($courseId)->coachName;
 
             $posStudantX = 590;
@@ -89,7 +92,7 @@ trait SendCertificate
             $posStudantY = 526;
 
             if (preg_match("/\p{Arabic}/u", auth('sanctum')->user()->user_name)) {
-                $posStudantX = 760;
+                $posStudantX = 720;
                 $posStudantY = 526;
             }
 
@@ -98,7 +101,7 @@ trait SendCertificate
             $studantName = $Arabic->utf8Glyphs(auth('sanctum')->user()->user_name);
 
             $CourseName = $Arabic->utf8Glyphs($courseName);
-
+            $ddcoachName=$Arabic->utf8Glyphs($coachName);
             $img = imagecreatefromjpeg(public_path('certificate.jpg'));
 
             $fontColor = imagecolorallocate($img, 0, 0, 0);
@@ -109,7 +112,7 @@ trait SendCertificate
 
             $this->addTextTime($img , $fontColor);
 
-            $this->addTextCoachName($img,  $fontColor , $coachName);
+            $this->addTextCoachName($img,  $fontColor , $ddcoachName);
 
             $fullNameImage = auth('sanctum')->user()->user_name . time() . '.jpg';
             imagejpeg($img, 'storage/CertificateImages/' . $fullNameImage);

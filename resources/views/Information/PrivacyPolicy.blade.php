@@ -13,9 +13,10 @@
                     <div class="row img-gallery" id="lightgallery">
                         <div class="col-xl-4 col-sm-6 m-auto">
                             <a href="javascript:void(0)" class="d-block link-overlay">
-                                <img class="d-block img-fluid br-5" src="/assets/images/logo.jpg">
+                                <img class="d-block img-fluid br-5" src="{{ asset('/assets/images/logo.jpg')}}">
                             </a>
                         </div>
+                       {{-- ') }} --}}
                     </div>
                     <div class="ea  mil-body mt-5">
                         <p>{{$privacyPolicy->value_ar}}</p>

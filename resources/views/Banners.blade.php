@@ -17,7 +17,7 @@
             <form method="POST" action="{{route('deleteBannerImage',$listOfImages->id)}}" class="card overflow-hidden">
                 @csrf
                 <img name="banner" name="banner"
-                        src="/storage/{{$listOfImages->image}}"
+                        src="{{asset('public/storage/'.$listOfImages->image)}}"
                         class="card-img-top">
                     <div class="card-body m-auto">
                         <button class="btn btn-danger text-white" type="submit">حذف الصورة</button>
@@ -57,6 +57,7 @@
                 </div>
             </form>
         </div>
+    </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             function readURL(input) {

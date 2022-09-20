@@ -3,17 +3,19 @@
 namespace App\Http\Controllers\Api\Sections;
 
 use App\Models\Room;
+use App\Models\User;
 use App\Models\JoinRoom;
 use App\Models\MessageRoom;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\JoinUsersList;
 use App\Http\Resources\RoomsResource;
 use function PHPUnit\Framework\isJson;
 use function PHPUnit\Framework\isNull;
 use App\Http\Resources\MessagesResource;
-use App\Models\User;
 
 class RoomController extends Controller
 {
@@ -31,7 +33,7 @@ class RoomController extends Controller
     }
     public function getRoomMessages($roomId)
     {
-
+        // return MessageRoom::where('room_id', $roomId)->where('created_at', '>=', $this->dateOfJoin($roomId))->with('join_User')->get();
         return MessagesResource::collection(MessageRoom::where('room_id', $roomId)->where('created_at', '>=', $this->dateOfJoin($roomId))->get());
     }
 
@@ -101,6 +103,11 @@ class RoomController extends Controller
         }
     }
 
+    public function getUsersJoinedRoom($roomId) {
+
+  return  JoinUsersList::collection(JoinRoom::where('room_id',$roomId)->get());
+
+    }
     public function ClearRoomChat($roomId)
     {
         // $EmptyRooms=Room::whereDoesntHave('join_User')->pluck('id');

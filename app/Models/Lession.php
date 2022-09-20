@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Lession extends Model
 {
     use HasFactory;
-    protected $guarded=[];
-
+    protected $guarded = [];
+    protected $table = 'lessions';
     public function images()
     {
         return $this->morphMany(photo::class, 'photoable');

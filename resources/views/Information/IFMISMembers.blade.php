@@ -73,6 +73,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{$listOfIfmisMembers->links()}}
                 </div>
             </div>
         </div>

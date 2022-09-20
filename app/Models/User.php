@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\JoinRoom;
 use App\Models\MarkUser;
 use App\Models\Competition;
+use App\Models\UserCountry;
 use Illuminate\Support\Str;
 use App\Models\CompetitionUser;
 use App\Models\PostCompatition;
@@ -16,13 +17,14 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable  ;
 
     /**
      * The attributes that are mass assignable.
@@ -89,6 +91,9 @@ class User extends Authenticatable
         return $this->hasMany(UserCertificate::class);
     }
 
+    public function userCountry(){
+        return $this->hasOne(UserCountry::class);
+    }
     // public function isJoin( $userId){
     //     return $this->join_User->contains('user_id',$userId->id);
     // }

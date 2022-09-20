@@ -15,12 +15,12 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
 
-        if(!$request->user()){
-            return route('ToeknNotFound');
-        }
-        // if (! $request->expectsJson()) {
-        //     return route('login');
+        // if(!$request->user()){
+        //     return route('ToeknNotFound');
         // }
+        if (! $request->expectsJson()) {
+            return route('Login');
+        }
 
     }
 }

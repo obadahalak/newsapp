@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('name_ar');
-            $table->foreignIdFor(Course::class)->constrained();
+            $table->foreignIdFor(Course::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

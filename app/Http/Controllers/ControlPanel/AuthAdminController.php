@@ -31,7 +31,7 @@ class AuthAdminController extends Controller
         if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
             return to_route('DashBoard');
         }
-        return $this->loginFailed();
+        return redirect()->back();
     }
 
     public function editProfile(ProfileAdminRequest $request)
@@ -53,7 +53,9 @@ class AuthAdminController extends Controller
 
     public function logoutAdmin()
     {
-        Auth::guard('admin')->logout();
-        return to_route('Login');
+        Auth::logout();
+       return to_route('Login');
     }
+
+
 }

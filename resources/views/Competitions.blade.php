@@ -25,7 +25,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($compatiton as $item)
+                                @forelse ($compatiton as $item)
                                     <tr>
                                         <td class="FixDetails">
                                             <div class="Details">
@@ -35,7 +35,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <img src="/storage/{{ $item->prize_files[0]->src }}"
+                                            <img src="/storage/{{ $item->prize_files[0]->src ?? 'no Image' }}"
                                                 class="avatar avatar-xxl  brround" />
                                         </td>
                                         <td class="FixDetails">
@@ -44,9 +44,9 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="badge bg-success badge-sm  me-1 mb-1 mt-1">
+                                            <span class="badge bg-success badge-sm  me-1 mb-1 mt-1 d-flex justifay-content-center">
 
-                                                <p>{{ count($item->members) }}</p>
+                                                <p style="margin:auto">{{ count($item->members) }}</p>
 
                                             </span>
                                         </td>
@@ -59,7 +59,10 @@
 
                                         </td>
                                     </tr>
-                                @endforeach
+                                    @empty
+                                    <p>لا يوجد مسابقات</p>
+
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -87,7 +90,7 @@
                                     accept="image/x-png,image/gif,image/jpeg" name="image" onchange="PreviewImage();" />
                                 <img id="UserImage" class="img-fluid rounded m-auto mt-1"
                                     style="width: 126px !important; height: 126px !important; border:1px solid #6F7072"
-                                    src="../assets/images/logo.jpg" />
+                                    src="{{asset('assets/images/logo.jpg')}}" />
                             </div>
                             <div class="d-flex mt-2">
                                 <button type="button" id='buttonid' name="files" class="btn btn-primary m-auto">
@@ -168,19 +171,19 @@
                                     <td class="FixDetails">
                                         <div class="Details">
                                             <h6 class="mb-0 fs-14 fw-semibold m-auto">
-                                               
+
                                             </h6>
                                         </div>
                                     </td>
                                     <td>
-                                      
+
                                     </td>
                                     <td>
-                                       
+
                                     </td>
                                     <td class="FixDetails">
                                         <div class="Details">
-                                           
+
                                         </div>
                                     </td>
                                     <td>
@@ -218,7 +221,7 @@
                             res => {
                                 res.json().then(
                                     data => {
-                                      
+
                                         if (data.data.posts.length > 0) {
 
                                             var temp = "";
@@ -229,8 +232,8 @@
                                                     "</td>";
 
                                                 temp += "<td>" +
-                                                    '<img class="avatar avatar-xxl  brround" src="/storage/' +
-                                                    itemData.user.image + '">'
+                                                    '<img class="avatar avatar-xxl  brround" src="'{{asset('public/storage/' +
+                                                    itemData.user.image + )}}'">'
 
                                                     +
                                                     "</td>";
@@ -240,7 +243,7 @@
                                                     '" target="_blank" class=" fa fa-chain btn btn-primary"></a>' +
                                                     "</td>";
 
-                                                    
+
 
                                                     temp += "<td>" +
                                                     ' <div class="Details">' + itemData
@@ -249,7 +252,7 @@
                                                     "</td>";
 
                                                     temp += "<td>" +
-                                                    ' <span class="badge rounded-pill bg-success badge-sm me-1 mb-1 mt-1">' + itemData
+                                                    ' <span class="badge rounded-pill bg-success badge-sm me-1 mb-1 mt-1" >' + itemData
                                                     .likes +
                                                     '</span>' +
                                                     "</td> ";
@@ -259,7 +262,7 @@
                                                     .desLike +
                                                     '</span>' +
                                                     "</td></tr> ";
-                                               
+
                                             });
                                             document.getElementById('tableData')
                                                 .innerHTML =

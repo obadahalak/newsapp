@@ -19,9 +19,9 @@ class AuthController extends Controller
     public function uploadImage($imageName, $UserImage)
     {
         if ($UserImage) {
-            if (File::exists('storage/' . $UserImage)) {
+            if (File::exists('public/storage/'.'storage/' . $UserImage) && $UserImage!=='profileImage/defaultImage.png') {
 
-                unlink('storage/' . $UserImage);
+                unlink('public/storage/' . $UserImage);
                 $nameImage = $imageName->store('profileImage', 'public');
                 return $nameImage;
             } else {
@@ -94,5 +94,10 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
+    }
+
+    public function getProfileFromId($id){
+
+    return new ProfileResource(User::findOrFail($id));
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\JoinRoom;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class MessagesResource extends JsonResource
@@ -14,11 +15,12 @@ class MessagesResource extends JsonResource
      */
     public function toArray($request)
     {
+
         return [
             'id'=>$this->id,
             'user'=>new UserResouce($this->user),
             'message'=>$this->message,
-         g
+
         ];
     }
 }

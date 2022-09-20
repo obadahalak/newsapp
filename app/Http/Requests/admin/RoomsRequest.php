@@ -24,11 +24,11 @@ class RoomsRequest extends FormRequest
     public function rules()
     {
         return [
-            'color'=>'|required',
-            'name' => 'required',
-            'name_ar' => 'required',
-            'image'=>'required|image',
-            'maxNumberOfMembers'=>'required|numeric',
+            'color'=>'',
+            'name' => '',
+            'name_ar' => '',
+            'image'=>'image',
+            'maxNumberOfMembers'=>'numeric',
         ];
     }
 }

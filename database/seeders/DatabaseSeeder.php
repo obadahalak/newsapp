@@ -3,16 +3,18 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
-use App\Models\CommonSection;
-use App\Models\IfmisMember;
-use App\Models\JoinRoom;
 use App\Models\newsAds;
-use App\Models\PostCompatition;
+use App\Models\JoinRoom;
+use App\Models\SiteInfo;
+use App\Models\IfmisMember;
 use App\Models\UserCountry;
-use Database\Factories\AdminFactory;
+use App\Models\CommonSection;
+use App\Models\CountOfVisits;
+use App\Models\PostCompatition;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Factories\AdminFactory;
 use Illuminate\Support\Facades\File;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,14 +25,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $jsonFile=File::get(public_path("data.json"));
-        $data=json_decode($jsonFile);
-        foreach($data as $listJson){
-            UserCountry::create([
-                'user_id'=>$listJson->user_id,
-                'country'=>$listJson->country,
-            ]);
-        }
+        // $jsoinFile=File::get(public_path('count_of_visits.json'));
+        // $data=json_decode($jsoinFile);
+        // foreach ($data as $list){
+        //     CountOfVisits::create([
+        //         'country'=>$list->country,
+        //         'countVisits'=>$list->countVisits,
+        //     ]);
+        // }
+        // $jsonFile=File::get(public_path("data.json"));
+        // $data=json_decode($jsonFile);
+        // foreach($data as $listJson){
+        //     UserCountry::create([
+        //         'user_id'=>$listJson->user_id,
+        //         'country'=>$listJson->country,
+        //     ]);
+        // }
+
      //   Admin::factory(1)->create();
         // newsAds::factory(20)->create();
         //PostCompatition::factory(1)->create();

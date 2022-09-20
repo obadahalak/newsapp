@@ -12,7 +12,7 @@ class AdminIfmisController extends Controller
 {
     public function IFMISMembersView()
     {
-        $listOfIfmisMembers = IfmisMember::latest()->get();
+        $listOfIfmisMembers = IfmisMember::latest()->paginate(10);
         return  view('Information.IFMISMembers', compact('listOfIfmisMembers'));
     }
     public function createIfmis(IfmisRequest $request)
@@ -44,8 +44,8 @@ class AdminIfmisController extends Controller
     {
         $getMember= IfmisMember::find($id);
 
-        unlink('storage/'. $getMember->imageFlag);
-        unlink('storage/'. $getMember->imageProfile);
+        unlink('public/storage'. $getMember->imageFlag);
+        unlink('public/storage/'. $getMember->imageProfile);
         $getMember->delete();
         toastr()->warning('تم حذف العضو بنجاح');
         return redirect()->back();

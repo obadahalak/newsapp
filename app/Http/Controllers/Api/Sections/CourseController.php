@@ -62,6 +62,11 @@ class CourseController extends Controller
         return Storage::download('public/' . $src);
     }
 
+    public function downloadCertificateEmail(Request $request)
+    {
+        return Storage::download('public/' .$request->src);
+    }
+
     public function ListQuzie($lan, $course_id)
     {
         if ($lan == 'ar')

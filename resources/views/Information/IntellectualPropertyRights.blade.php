@@ -13,7 +13,7 @@
                     <div class="row img-gallery" id="lightgallery">
                         <div class="col-xl-4 col-sm-6 m-auto">
                             <a href="javascript:void(0)" class="d-block link-overlay">
-                                <img class="d-block img-fluid br-5" src="/assets/images/logo.jpg">
+                                <img class="d-block img-fluid br-5" src="{{asset('/assets/images/logo.jpg')}}">
                             </a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
 
     <div class="modal fade" id="Edit">
         <div class="modal-dialog modal-dialog-centered text-center modal-lg" role="document">
-            <form method="POST" Action="{{route('PropertyRightsEdit')}}" class="modal-content modal-content-demo">
+            <form method="POST" action="{{route('PropertyRightsEdit')}}" class="modal-content modal-content-demo">
              @csrf
                 <div class="modal-header">
                     <h6 class="modal-title">حقوق الملكية الفكرية</h6><button type="button" aria-label="Close" class="btn-close"

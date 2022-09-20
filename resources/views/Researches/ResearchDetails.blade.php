@@ -14,7 +14,8 @@
                 <div class="card-body">
                     <div class="email-media">
                         <div class="mt-0 d-sm-flex">
-                            <img class="me-2 rounded-circle avatar avatar-lg" src="/assets/images/logo.svg">
+                            <img class="me-2 rounded-circle avatar avatar-lg" src="{{ asset('/assets/images/logo.svg')}}">
+
                             <div class="media-body pt-0">
                                 <div class="float-end d-none d-md-flex fs-15">
                                     <small class="me-3 mt-3 text-muted">{{$getResearch->created_at->diffForHumans()}}</small>
@@ -32,7 +33,7 @@
                         @foreach ($getResearch->images as $listOfImages)
                         <div class="col-xl-4 col-sm-6 m-auto">
                             <a href="javascript:void(0)" class="d-block link-overlay">
-                                <img class="d-block img-fluid br-5" src="/storage/{{$listOfImages->src}}">
+                                <img class="d-block img-fluid br-5" src="/newsApp/public/storage/{{$listOfImages->src}}">
                             </a>
                         </div>
                         @endforeach

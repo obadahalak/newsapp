@@ -33,7 +33,7 @@
                                 </li>
                             </ul>
                             <a class="bg-light">
-                                <img class="img-fluid ClubImage br-7 w-100" src="/storage/{{ $item->image }}">
+                                <img class="img-fluid ClubImage br-7 w-100" src="{{ asset('public/storage/'.$item->image )}}">
                             </a>
                         </div>
                         <div class="card-body pt-0">
@@ -131,9 +131,9 @@
             $('.EditRoom').on('click', function() {
                 console.log('click');
                 let id = $(this).attr('data-id');
-                
+
                 $('#idData').val(id);
-               
+
             });
         });
     </script>

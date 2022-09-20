@@ -14,7 +14,7 @@
                             <input id='uploadImage' onchange="readURL(this);" type='file' hidden
                                 accept="image/x-png,image/gif,image/jpeg" name="upload" onchange="PreviewImage();" />
                             <img id="UserImage" class="img-fluid rounded m-auto mt-1" style="width: 126px !important; height: 126px !important; border:1px solid #6F7072"
-                                src="/storage/{{auth('admin')->user()->image}}" />
+                                src="{{ asset('public/storage/'.auth('admin')->user()->image) }}" />
                         </div>
                         <div class="d-flex mt-2">
                             <button type="button" id='buttonid' name="files" class="btn btn-primary m-auto">

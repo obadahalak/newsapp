@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AdminSuggestionsController extends Controller
 {
     public  function getSuggestions(){
-        $data=Suggestion::latest()->get();
+        $data=Suggestion::latest()->paginate(10);
         return view('Suggestions',compact('data'));
     }
 }

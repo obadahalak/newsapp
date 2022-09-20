@@ -20,4 +20,12 @@ class MessageRoom extends Model
     public function room(){
         return $this->belongsTo(Room::class);
     }
+
+    public function join_User(){
+        return $this->hasMany(JoinRoom::class,'room_id');
+    }
+    public function Listjoin_User($id){
+        return $this->hasMany(JoinRoom::class,'room_id')->where('room_id',$id);
+    }
+
 }

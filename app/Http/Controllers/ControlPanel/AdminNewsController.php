@@ -52,7 +52,7 @@ class AdminNewsController extends Controller
         $NewRecord = News::find($newsId);
         $listImages = $NewRecord->images;
         foreach ($listImages as $images) {
-            if(File::exists('storage'.$images->src)){
+            if(File::exists('public/storage/'.'storage'.$images->src)){
 
                 unlink('storage'.$images->src);
             }

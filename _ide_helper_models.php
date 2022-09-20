@@ -325,6 +325,48 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\ContactUs
+ *
+ * @property int $id
+ * @property string $value
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ContactUs whereValue($value)
+ */
+	class ContactUs extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\CountOfVisits
+ *
+ * @property int $id
+ * @property string $country
+ * @property string $countryCode
+ * @property int $countVisits
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits query()
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits whereCountVisits($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits whereCountryCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CountOfVisits whereUpdatedAt($value)
+ */
+	class CountOfVisits extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Course
  *
  * @property int $id
@@ -366,6 +408,23 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\GlobalVisits
+ *
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|GlobalVisits newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GlobalVisits newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GlobalVisits query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GlobalVisits whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GlobalVisits whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GlobalVisits whereUpdatedAt($value)
+ */
+	class GlobalVisits extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\IfmisMember
  *
  * @property int $id
@@ -379,8 +438,6 @@ namespace App\Models{
  * @property string $imageFlag
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read mixed $image_flag
- * @property-read mixed $image_profile
  * @method static \Database\Factories\IfmisMemberFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|IfmisMember newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|IfmisMember newQuery()
@@ -409,6 +466,7 @@ namespace App\Models{
  * @property int $room_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
  * @method static \Database\Factories\JoinRoomFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|JoinRoom newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|JoinRoom newQuery()
@@ -538,6 +596,8 @@ namespace App\Models{
  * @property string $message
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\JoinRoom[] $join_User
+ * @property-read int|null $join__user_count
  * @property-read \App\Models\Room $room
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|MessageRoom newModelQuery()
@@ -703,6 +763,26 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|QuizeUser whereUserId($value)
  */
 	class QuizeUser extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\ReportUser
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ReportUser whereUserId($value)
+ */
+	class ReportUser extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -923,6 +1003,8 @@ namespace App\Models{
  * @property-read int|null $mark_user_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostCompatition[] $postCompetition
+ * @property-read int|null $post_competition_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\UserCertificate[] $userCertificate
@@ -970,6 +1052,29 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|UserCertificate whereUserId($value)
  */
 	class UserCertificate extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\UserCountry
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $country
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
+ * @method static \Database\Factories\UserCountryFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry query()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserCountry whereUserId($value)
+ */
+	class UserCountry extends \Eloquent {}
 }
 
 namespace App\Models{
