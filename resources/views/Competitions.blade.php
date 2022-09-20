@@ -35,7 +35,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <img src="/storage/{{ $item->prize_files[0]->src ?? 'no Image' }}"
+                                            <img src="public/storage/{{ $item->prize_files[0]->src ?? 'no Image' }}"
                                                 class="avatar avatar-xxl  brround" />
                                         </td>
                                         <td class="FixDetails">
@@ -217,7 +217,7 @@
                     url: "PostCompetitions/" + id,
                     success: function(response) {
 
-                        fetch("http://127.0.0.1:8000/api/getCompetitonById/ar/" + id).then(
+                        fetch("http://ifmis-2030.icu/newsApp/api/getCompetitonById/ar/" + id).then(
                             res => {
                                 res.json().then(
                                     data => {
@@ -231,9 +231,9 @@
                                                     .user_name +
                                                     "</td>";
 
-                                                temp += "<td>" +
-                                                    '<img class="avatar avatar-xxl  brround" src="'{{asset('public/storage/' +
-                                                    itemData.user.image + )}}'">'
+                                                    temp += "<td>" +
+                                                        '<img class="avatar avatar-xxl  brround" src="/public/storage/' +
+                                                        itemData.user.image + '">'
 
                                                     +
                                                     "</td>";

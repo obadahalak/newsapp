@@ -16,7 +16,7 @@ class AuthAdminController extends Controller
     use profileAdmin;
     public function loginAdmin()
     {
-        return view('auth.login');
+        return view('Auth.Login');
     }
 
     public function loginFailed()
