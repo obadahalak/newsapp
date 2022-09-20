@@ -36,7 +36,7 @@ class AdminRoomController extends Controller
      public function uploadImage($imageName, $UserImage)
     {
         if ($UserImage) {
-            if (File::exists('public/storage/'.'public/storage/' . $UserImage)) {
+            if (File::exists('public/storage/'. $UserImage)) {
 
                 unlink('public/storage/' . $UserImage);
                 $nameImage = $imageName->store('rooms', 'public');

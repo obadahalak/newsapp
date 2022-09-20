@@ -116,7 +116,7 @@ $mode = session()->get('theme');
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                                 class="nav-link leading-none d-flex">
-                                                <img src="{{ asset('storage/'.auth('admin')->user()->image) }}" alt="profile-user"
+                                                <img src="{{ asset('public/storage/'.auth('admin')->user()->image) }}" alt="profile-user"
                                                     class="avatar  profile-user brround cover-image">
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">

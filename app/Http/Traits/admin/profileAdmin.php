@@ -11,7 +11,7 @@ trait profileAdmin
     public function uploadImage($image, $adminImage)
     {
         if ($image) {
-            if(File::exists('public/storage/'.'public/storage/'.$adminImage)){
+            if(File::exists('public/storage/'.$adminImage)){
 
                 unlink('public/storage/' . $adminImage);
             }

@@ -65,8 +65,9 @@
                                     onchange="PreviewImage();" />
                                 <img id="UserImage" class="img-fluid m-auto mt-1"
                                     style="width: 126px !important; height: 126px !important; border:1px solid #6F7072; border-radius:4px"
-                                    src="../assets/images/logo.jpg" />
+                                    src=" {{asset('public/storage'.$data->images[0]->src) }}" />
                             </div>
+                          {{--  --}}
                             <div class="d-flex mt-2">
                                 <button type="button" id='buttonid' name="files" class="btn btn-primary m-auto">
                                     اختيار صورة الدورة

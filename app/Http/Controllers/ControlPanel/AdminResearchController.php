@@ -41,7 +41,7 @@ class AdminResearchController extends Controller
         $Research = Research::find($id);
         $listImages = $Research->images;
         foreach ($listImages as $images) {
-            if (File::exists('public/storage/'.'storage' . $images->src)) {
+            if (File::exists('public/storage/'. $images->src)) {
 
                 unlink('storage' . $images->src);
             }

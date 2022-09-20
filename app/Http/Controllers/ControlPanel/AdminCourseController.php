@@ -153,7 +153,7 @@ class AdminCourseController extends Controller
         DB::transaction(function () use ($course) {
 
             foreach ($course->images as $images) {
-                if (File::exists('public/storage/'.'storage/' . $images->src)) {
+                if (File::exists('public/storage/'. $images->src)) {
                     unlink('public/storage/' . $images->src);
                 }
                 $course->images()->delete();
@@ -161,7 +161,7 @@ class AdminCourseController extends Controller
 
             foreach ($course->Lessions as $lessions) {
                 foreach ($lessions->images as $sourceImage) {
-                    if (File::exists('public/storage/'.'storage/' . $sourceImage->src)) {
+                    if (File::exists('public/storage/'. $sourceImage->src)) {
                         unlink('public/storage/' . $sourceImage->src);
                     }
                     $sourceImage->delete();
@@ -205,7 +205,7 @@ class AdminCourseController extends Controller
             if ($request->courseImage) {
 
                 foreach ($course->images as $images) {
-                    if (File::exists('public/storage/'.'storage/' . $images->src)) {
+                    if (File::exists('public/storage/'. $images->src)) {
                         unlink('public/storage/' . $images->src);
                     }
                 }
@@ -252,7 +252,7 @@ class AdminCourseController extends Controller
 
                     $updatePdf = $lession->images->where('type', 'pdf')->first();
 
-                    if (File::exists('public/storage/'.'storage/' . $updatePdf->src)) {
+                    if (File::exists('public/storage/' . $updatePdf->src)) {
 
                         unlink('public/storage/' . $updatePdf->src);
                     }

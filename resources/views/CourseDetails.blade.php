@@ -78,7 +78,7 @@
                                                                         <td colspan="2">
                                                                             <div class="d-flex">
 
-                                                                                <a href="{{asset('public/storage/'.$files->src)}}"
+                                                                                <a  href="{{asset('public/storage/'.$files->src)}}"
                                                                                     class="bg-success-transparent border border-success brround m-auto">
                                                                                     <svg style="width:16px;height:16px"
                                                                                         viewBox="0 0 24 24">
@@ -95,7 +95,7 @@
                                                         @foreach ($data['files'][1] as $itemLession)
                                                             @foreach ($itemLession->images as $videos)
                                                                 <div class="col-xl-12">
-                                                                    <a href="{{asset('public/storage/'$videos->src)}}">انفر هنا للأنتقال الى
+                                                                    <a  target="_blank" href="{{$videos->src}}">انفر هنا للأنتقال الى
                                                                         الرابط </a>
                                                                 </div>
                                                                 <br>

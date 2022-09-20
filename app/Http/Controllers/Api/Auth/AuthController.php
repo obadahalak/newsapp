@@ -16,21 +16,20 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    public function uploadImage($imageName, $UserImage)
-    {
-        if ($UserImage) {
-            if (File::exists('public/storage/'.'storage/' . $UserImage) && $UserImage!=='profileImage/defaultImage.png') {
+        public function uploadImage($imageName, $UserImage)
+        {
 
-                unlink('public/storage/' . $UserImage);
-                $nameImage = $imageName->store('profileImage', 'public');
-                return $nameImage;
-            } else {
-                $nameImage = $imageName->store('profileImage', 'public');
-                return $nameImage;
-            }
-        } else
-            return auth('sanctum')->user()->image;
-    }
+                if (File::exists('public/storage/'. $UserImage) && $UserImage!=='profileImage/defaultImage.png') {
+
+                    unlink('public/storage/' . $UserImage);
+                    $path = $imageName->store('profileImage', 'public');
+                    return $path;
+                } else {
+                    $path = $imageName->store('profileImage', 'public');
+                    return $path;
+                }
+
+        }
 
     public function AuthLogin(LoginRequest $request)
     {
@@ -75,10 +74,10 @@ class AuthController extends Controller
         ]);
 
         $UserImage = auth('sanctum')->user()->image;
-        return $request->user()->update(
+         $request->user()->update(
             $validated +
                 [
-                    'image' => $request->image ?  $this->uploadImage($request->image, $UserImage) : $UserImage,
+                    'image' => $request->image ?  $this->uploadImage($request->image, $UserImage)->dd() : $UserImage,
                 ]
 
         );
