@@ -32,7 +32,7 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "App\\Http\\services\\I18N\\Arabic.php"
+            "app\\Http\\services\\I18N\\Arabic.php"
         ]
     },
     "autoload-dev": {
